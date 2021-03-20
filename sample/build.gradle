@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import dev.chrisbanes.accompanist.buildsrc.Libs
+import com.google.accompanist.buildsrc.Libs
 
 apply plugin: 'com.android.application'
 
@@ -24,7 +24,7 @@ android {
     compileSdkVersion 30
 
     defaultConfig {
-        applicationId "dev.chrisbanes.insetter.sample"
+        applicationId "com.google.accompanist.sample"
         minSdkVersion 21
         targetSdkVersion 30
 
@@ -49,17 +49,20 @@ android {
 }
 
 dependencies {
-    implementation project(':picasso')
     implementation project(':coil')
     implementation project(':glide')
     implementation project(':insets')
+    implementation project(':pager')
+    implementation project(':flowlayout')
+
+    implementation Libs.AndroidX.appcompat
 
     implementation Libs.Coil.gif
 
-    implementation Libs.AndroidX.Compose.runtime
     implementation Libs.AndroidX.Compose.material
-    implementation Libs.AndroidX.Compose.foundation
+    implementation Libs.AndroidX.Compose.iconsExtended
     implementation Libs.AndroidX.Compose.layout
+
     implementation Libs.AndroidX.Activity.activityCompose
 
     implementation Libs.AndroidX.coreKtx

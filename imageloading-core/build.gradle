@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import dev.chrisbanes.accompanist.buildsrc.Libs
+import com.google.accompanist.buildsrc.Libs
 
 plugins {
     id 'com.android.library'
@@ -53,16 +53,15 @@ android {
         textOutput 'stdout'
         // We run a full lint analysis as build part in CI, so skip vital checks for assemble tasks
         checkReleaseBuilds false
+
+        // Not much we can do about unsafe lint rules from libraries
+        disable "UnsafeExperimentalUsageError", "UnsafeExperimentalUsageWarning"
     }
 }
 
 dependencies {
-    implementation Libs.AndroidX.coreKtx
-
-    implementation Libs.AndroidX.Compose.runtime
     implementation Libs.AndroidX.Compose.foundation
 
-    implementation Libs.Kotlin.stdlib
     implementation Libs.Coroutines.android
 }
 

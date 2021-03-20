@@ -50,17 +50,15 @@ cp -R docs/* $DOCS_ROOT
 
 cp README.md $DOCS_ROOT/index.md
 cp CONTRIBUTING.md $DOCS_ROOT/contributing.md
-cp images/social.png $DOCS_ROOT/header.png
 
 sed -i.bak 's/CONTRIBUTING.md/contributing/' $DOCS_ROOT/index.md
 sed -i.bak 's/README.md//' $DOCS_ROOT/index.md
-sed -i.bak 's/images\/social.png/header.png/' $DOCS_ROOT/index.md
+sed -i.bak 's/docs\/header.png/header.png/' $DOCS_ROOT/index.md
 
 # Convert docs/xxx.md links to just xxx/
 sed -i.bak 's/docs\/\([a-zA-Z-]*\).md/\1/' $DOCS_ROOT/index.md
 
 copyReadme coil
-copyReadme picasso
 copyReadme glide
 
 # Finally delete all of the backup files
